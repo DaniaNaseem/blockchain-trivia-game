@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100;0,200;0,300;0,500;0,800;0,900;1,100;1,200;1,300&display=swap');
+
+
+
+* {
+  margin: 0;
+padding:0;
+}
+
+body {
+  background-color: white;
+  color: #eee;
+}
+
+
+.black-background{
+  background-color: black;
+}
+
+#content {
+  min-height: calc(100vh - 220px);
+}
+
+main {
+  padding-top: 50px;
+  max-width: 100vh;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+
+
+/* Target specific option elements with the "correct" class */
+div.options div.option-item.correct {
+  background-color: green;
+}
+
+/* Target specific option elements with the "incorrect" class */
+div.options div.option-item.incorrect {
+  background-color: red;
+}
+
+
+footer{
+  background-color: black;
+}
+
+
+.cover-screen {
+  min-height: 100vh;
+  max-height: 100vh;  
+}
+
+.center-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+
+.question-area{
+  max-height: 67vh;
+  min-height: 67vh;
+}
+
+.round-area{
+  max-height: 67vh;
+  min-height: 67vh;
+}
+
+.game-over-area{
+  max-height: 67vh;
+  min-height: 67vh;
+}
+
+
+.cover-screen-height{
+  max-height: 90vh;
+  min-height: 50vh;
+}
+
+
+.custom-bg {
+  height:100vh;
+  background: #000115;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
+.cursor{
+  z-index:999;
+  position: fixed;
+  background: #2696E8;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 0 20px #2696E8,
+  0 0 60px #2696E8,
+  0 0 100px #2696E8;
+
+  animation: colors 5s infinite;
+  transform: translate(-50%,-50%);
+  display: none;
+}
+
+@keyframes colors {
+  0%{
+    filter:hue-rotate(0deg);
+  }
+  100%{
+    filter: hue-rotate(360deg);
+  }
+}
+
+.cursor:before{
+  content: '';
+  position: absolute;
+  background: #2696E8;
+  width: 50px;
+  height: 50px;
+  opacity: 0.2;
+  transform: translate(-30%, -30%);
+  border-radius: 50%;
+}
+
+
+
+.nothing-below{
+  bottom: 0;
+}
+
+/*
+JS code
+
+
+const cursor = document.querySelecter(".cursor");
+var timeout;
+
+document.addEventListener("mousemove", (e)=>{
+  let x = e.pageX;
+  let y = e.pageY;
+
+  cursor.style.top = y + "px";
+  cursor.style.left = x + "px";
+  cursor.style.display="block";
+
+  function mouseStopped(){
+    cursor.style.display="none";
+  }
+  clearTimeout(timeout);
+  timeout = setTimeout(mouseStopped, 1000);
+
+});
+
+
+document.addEventListener("mouseout", (e)=>{
+  cursor.style.display = "none";
+});
+
+*/
+
+.connect-wallet-bg{
+
+background: linear-gradient(135deg, #d7d7d780 50%, transparent 0),linear-gradient(-135deg, #d7d7d780 50%, transparent 0);
+        background-size: 3em 3em;
+        background-color: #ffffff;
+        backopacity: 0.25
+}
